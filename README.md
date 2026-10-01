@@ -1,27 +1,17 @@
-# FORGE — Your Training Log
+# FORGE — Cinematic Workout Wall
 
-A mobile-friendly React + Vite training tracker with a cinematic photo hero, 8-day workout cycle, set logging, nutrition diary, progress check-ins, soundtrack selection, and JSON backup.
+Minimal full-screen cinematic workout experience: no dashboard, tracker, media upload interface, or extra pages.
 
-## Run locally
+## Run
+`npm install` then `npm run dev`. Build with `npm run build`.
+Vercel: Framework Vite, Build Command `npm run build`, Output Directory `dist`, Root Directory `.`.
 
-Requirements: Node.js 18+ (or a current LTS release).
+## Your media (codebase only)
+Put up to 10 media files in each folder, named 01.jpg through 10.jpg:
+`public/media/chest-1/`, `back-1/`, `legs-1/`, `rest-1/`, `chest-2/`, `back-2/`, `legs-2/`, `rest-2/`.
+Images: JPG/JPEG/PNG/WebP. Videos: MP4/WebM; edit the MEDIA array in `src/ForgeApp.jsx` to point a slot at a video filename.
+Images advance every 6.5 seconds; videos advance when playback ends.
 
-```bash
-npm install
-npm run dev
-```
-
-Open the local URL printed by Vite (usually http://localhost:5173).
-
-## Build for production
-
-```bash
-npm run build
-npm run preview
-```
-
-## Personalize the cinematic home screen
-
-Open **Profile → Cinematic Photo Wall**, choose the training day, and upload your own images. They are stored in this browser on this device. Upload portrait photos for a phone-first full-screen composition. Use **Profile → Soundtrack** to select an audio file; press Play to start it because mobile browsers restrict autoplay.
-
-Your logs are stored in browser localStorage. Use **Profile → Backup → Export My Data** regularly. Clearing browser data can remove locally stored information.
+## Music
+Add one soundtrack per section at `public/audio/chest-1.mp3`, `back-1.mp3`, `legs-1.mp3`, `rest-1.mp3`, `chest-2.mp3`, `back-2.mp3`, `legs-2.mp3`, `rest-2.mp3`.
+Tap the small play control to start; browsers generally block autoplay until user interaction. Switching workout sections loads its matching track and pauses playback.
